@@ -11,21 +11,21 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <div class="wrapper">
         <!--Шапка-->
-           <header class="d-flex justify-content-around align-items-center p-3" id="header">
-                <a href="#" class="d-flex mb-3 mb-md-0 justify-content-center text-decoration-none">
-                    <img class="ps-4" src="/img/Group.svg" height="60" alt="лого">
-                    <h1 style="color: #084298;"><em>Violet</em></h1>
-                </a> 
-                <ul class="nav itd-nav nav-pills">
-                    <li class="nav-item fs-5"><a href="#" class="nav-link text-info-emphasis text-center"><strong>Позвоните нам</strong></a></li>
-                    <li class="nav-item fs-5"><a href="#" class="nav-link text-info-emphasis text-center"><strong>Письмо руководству</strong></a></li>
-                </ul>
-                <a role="button" class="btn bg-primary-subtle align-items-center justify-content-center p-3">
-                    <strong>
-                        Личный кабинет
-                    </strong>
-                </a>
-            </header> 
+        <header class="d-flex justify-content-around p-3 align-items-center" id="header">
+            <a href="#" class="d-flex mb-3 mb-md-0 justify-content-center text-decoration-none">
+                <img class="ps-4" src="/img/Group.svg" height="60" alt="лого">
+                <h1 id="itd-h1" style="color: #084298;"><em>Violet</em></h1>
+            </a> 
+            <ul class="nav itd-nav nav-pills">
+                <li class="nav-item link-offset-3 fs-5 itd-a"><a href="#" class="nav-link text-info-emphasis text-center"><strong>Позвоните нам</strong></a></li>
+                <li class="nav-item link-offset-3 fs-5 itd-a"><a href="#" class="nav-link text-info-emphasis text-center"><strong>Письмо руководству</strong></a></li>
+            </ul>
+            <a role="button" class="btn align-items-center justify-content-center p-3 itd-a-button text-light" style="background:#063479;">
+                <strong>
+                    Личный кабинет
+                </strong>
+            </a>
+        </header>  
             <!--Каталог страницы-->
     <section class="mb-4" style="background:#063479">
         <div class="container">
@@ -69,13 +69,13 @@
                         </div>
                         <div class="mb-3 d-grid gap-2">
                             <button type="submit" class="btn btn-primary align-items-center">Войти</button>
-                            <a href="#" role="button" class="btn bg-primary text-light">Регистрация</a>
+                            <a href="/index_registration.html" role="button" class="btn bg-primary text-light">Регистрация</a>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-    
+    <!--Подвал-->
     </section>
     <footer class="d-flex align-items-center p-4 border-top bg-dark" id="footer">
         <p class="col-md-6 mb-0 text-light">© 2024 Company, Inc</p>
@@ -84,24 +84,24 @@
             <h5 class="mb-1 text-light border-bottom border-subtle p-1">Услуги</h5>
             <div class="row gx-5 border-start border-2 border-dark">
                 <div class="col ">
-                    <a class="nav-link text-light" href="#">Перевозка грузов</a>
-                    <a class="nav-link text-light" href="#">Экспресс доставка</a>
+                    <a class="nav-link itd-link-a link-offset-2 text-light" href="#">Перевозка грузов</a>
+                    <a class="nav-link itd-link-a link-offset-2 text-light" href="#">Экспресс доставка</a>
                 </div>
                 <div class="col">
-                    <a class="nav-link text-light" href="#">Логистика e-commerce</a>
-                    <a class="nav-link text-light" href="#">Дополнительные услуги</a>
+                    <a class="nav-link itd-link-a link-offset-2 text-light" href="#">Логистика e-commerce</a>
+                    <a class="nav-link itd-link-a link-offset-2 text-light" href="#">Дополнительные услуги</a>
                 </div>
                 <div class="col">
-                    <a class="nav-link text-light" href="#">Поставщикам и перевозчикам</a>
-                    <a class="nav-link text-light" href="#">Тарифы</a>
+                    <a class="nav-link itd-link-a link-offset-2 text-light" href="#">Поставщикам и перевозчикам</a>
+                    <a class="nav-link itd-link-a link-offset-2 text-light" href="#">Тарифы</a>
                 </div>
                 <div class="col">
-                    <a class="nav-link text-light" href="#">Акции</a>
-                    <a class="nav-link text-light" href="#">Контакты</a>
+                    <a class="nav-link itd-link-a link-offset-2 text-light" href="#">Акции</a>
+                    <a class="nav-link itd-link-a link-offset-2 text-light" href="#">Контакты</a>
                 </div>
             </div>
         </div>
-      </footer>
+      </footer> 
     </div>
 </body>
 </html>

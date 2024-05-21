@@ -2,3 +2,21 @@
     width: 100%;
     height: 100px;
 }
+/*Шапка hover*/
+#itd-h1:hover{
+    opacity: 75%;
+    transition-duration: 0.2s;
+}
+.itd-link-a:hover{
+    text-decoration: underline;
+    transition-duration: 0.1s;
+}
+.itd-a-button:hover{
+    background-color: var(--bs-primary-bg-subtle);
+}
+.itd-a:hover{
+    text-decoration: underline;
+    transition-duration: 0.1s;
+    color: var(--bs-primary-bg-subtle);
+   
+}
