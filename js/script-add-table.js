@@ -1,48 +1,58 @@
-/*Добавление данных в таблицы*/
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('form');
-    const tableBody = document.querySelector('tbody');
-    const priceElement = document.querySelector('#price');
+document.addEventListener("DOMContentLoaded", function () {
+    const press = document.querySelector(".itd-btn");
+    const weightInput = document.querySelector("#exampleFormControlTextarea1");
+    const volumeInput = document.querySelector("#exampleFormControlTextarea2");
+    const priceDisplay = document.querySelector("#price");
+    const tariffSelect = document.querySelector("#itd-tariff");
 
-    form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent form submission
+    // Объект с ценами для каждого тарифа
+    const tariffPrices = {
+        "1": 100,
+        "2": 200,
+        "3": 300,
+        "4": 400,
+        "5": 500,
+        "6": 50,
+        "7": 150,
+        "8": 100,
+        "10": 350,
+        "11": 600
+    };
 
-        // Extract values from form fields
-        const selectValue = event.target.querySelector('select').value;
-        const volumeValue = event.target.querySelector('#exampleFormControlTextarea1').value;
-        const weightValue = event.target.querySelector('#exampleFormControlTextarea2').value;
+    // Функция для рассчета суммы объема и веса с учетом тарифа
+    function calculateTotalPrice() {
+        const weight = parseFloat(weightInput.value) || 0;
+        const volume = parseFloat(volumeInput.value) || 0;
+        const tariffPrice = tariffPrices[tariffSelect.value] || 0;
+        const totalPrice = weight + volume + tariffPrice;
+        priceDisplay.textContent = totalPrice.toFixed(2);
+    }
 
-        // Calculate price (for demonstration purposes)
-        let price = 0;
-        if (volumeValue > 0 && weightValue > 0) {
-            price = (volumeValue * 10) + (weightValue * 5);
-        }
+    // Добавляем обработчики событий для input-ов и select
+    weightInput.addEventListener("input", calculateTotalPrice);
+    volumeInput.addEventListener("input", calculateTotalPrice);
+    tariffSelect.addEventListener("change", calculateTotalPrice);
 
-        // Update price display
-        priceElement.textContent = price;
+    // Обработчик события клика на кнопку
+    press.addEventListener('click', function() {
+        console.log('1')
+        const tariff = tariffSelect.value;
+        const weight = weightInput.value;
+        const volume = volumeInput.value;
+        const city = document.querySelector("#exampleFormControlTextarea3").value;
+        const price = priceDisplay.textContent;
 
-        // Create a new table row
-        const newRow = document.createElement('tr');
+        const cargo = {
+            tariff: tariff,
+            weight: weight,
+            volume: volume,
+            city: city,
+            price: price
+        };
 
-        // Create table cells and fill with data
-        const rowData = [
-            document.createTextNode(tableBody.childElementCount + 1), // Row number
-            document.createTextNode(volumeValue), // Volume
-            document.createTextNode(selectValue), // Tariff
-            document.createTextNode(weightValue), // Weight
-            document.createTextNode(price) // Price
-        ];
-
-        rowData.forEach(data => {
-            const newCell = document.createElement('td');
-            newCell.appendChild(data);
-            newRow.appendChild(newCell);
-        });
-
-        // Append the new row to the table body
-        tableBody.appendChild(newRow);
-
-        // Reset form fields
-        event.target.reset();
+        let cargos = JSON.parse(localStorage.getItem('cargos')) || [];
+        cargos.push(cargo);
+        localStorage.setItem('cargos', JSON.stringify(cargos));
+        console.log('2')
     });
 });
